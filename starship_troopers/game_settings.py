@@ -14,3 +14,8 @@ class Settings():
 		self.ship_width = 60
 		self.ship_colour = (0, 0, 0)
 		self.ship_speed_factor = 2
+		
+		# Missile properties
+		self.missile_radius = 2
+		self.missile_width = 0
+		self.missile_colour = (0, 0, 0)
