@@ -13,3 +13,4 @@ class Settings():
 		self.ship_height = 40
 		self.ship_width = 60
 		self.ship_colour = (0, 0, 0)
+		self.ship_speed_factor = 2
