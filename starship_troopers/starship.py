@@ -11,8 +11,8 @@ class Starship():
 
 		# Create the ship 
 		self.rect = pygame.Rect(0, 0, 
-			game_settings.ship_width, game_settings.ship_height)
-		self.colour = game_settings.ship_colour
+			game_settings.starship_width, game_settings.starship_height)
+		self.colour = game_settings.starship_colour
 		
 		# Positioning
 		self.rect.centerx = self.screen_rect.centerx
@@ -31,9 +31,9 @@ class Starship():
 	def update(self, game_settings):
 		"""Updates the float positions depending on the move flags."""
 		if self.move_right and self.rect.right < self.screen_rect.right:
-			self.x += game_settings.ship_speed_factor
+			self.x += game_settings.starship_speed_factor
 		elif self.move_left and self.x > 0:
-			self.x -= game_settings.ship_speed_factor				
+			self.x -= game_settings.starship_speed_factor				
 	
 		self.rect.x = self.x
 
