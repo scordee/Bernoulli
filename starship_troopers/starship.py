@@ -38,9 +38,9 @@ class Starship():
 		self.rect.x = self.x
 
 		if self.move_up and self.y > 0:
-			self.y -= game_settings.ship_speed_factor
+			self.y -= game_settings.starship_speed_factor
 		elif self.move_down and self.rect.bottom < self.screen_rect.bottom:
-			self.y += game_settings.ship_speed_factor 
+			self.y += game_settings.starship_speed_factor 
 
 		self.rect.y = self.y
 
