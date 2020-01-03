@@ -28,7 +28,7 @@ class Starship():
 		self.move_up = False
 		self.move_down = False
 
-	def update(self, game_settings):
+	def update_position(self, game_settings):
 		"""Updates the float positions depending on the move flags."""
 		if self.move_right and self.rect.right < self.screen_rect.right:
 			self.x += game_settings.starship_speed_factor
