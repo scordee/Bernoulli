@@ -48,11 +48,8 @@ def update_missiles_position_and_count(missiles):
 	"""Update the position of missiles and get rid of old missiles."""
 
 	# Update missiles positions.
-	'''
-	When an update is called on the group, it calls the update
-	each element of the group. In this case, bullet.update()
-	'''
-	missiles.update_position()
+	for missile in missiles.sprites():
+		missile.update_position()
 
 	# Get rid of missiles that have disappeared.
 	for missile in missiles.copy():
