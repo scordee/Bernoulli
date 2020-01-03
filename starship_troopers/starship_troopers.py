@@ -24,9 +24,9 @@ def start_game():
 	missiles = Group()
 
 	while True:
-		gf.check_events(game_settings, screen, starship, missiles)
-		starship.update(game_settings)
-		gf.update_missiles(missiles)
+		gf.check_for_events(game_settings, screen, starship, missiles)
+		starship.update_position(game_settings)
+		gf.update_missiles_position_and_count(missiles)
 		gf.update_screen(game_settings, screen, starship, missiles)
 	
 start_game()
