@@ -23,7 +23,7 @@ class Missile(Sprite):
 		self.speed = game_settings.missile_speed_factor		
 		self.radius = game_settings.missile_radius
  
-	def update(self):
+	def update_position(self):
 		"""Updates the y-coordinate of the missile."""
 		self.y -= self.speed
 		self.rect.y = self.y
