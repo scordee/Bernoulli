@@ -5,17 +5,17 @@ import pygame
 from missile import Missile
 
 
-def check_events(game_settings, screen, starship, missiles):
+def check_for_events(game_settings, screen, starship, missiles):
 	"""Respond to keypresses and mouse events."""
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			sys.exit()
 		elif event.type == pygame.KEYDOWN:
-			check_keydown_events(event, game_settings, screen, starship, missiles)
+			check_for_keydown_events(event, game_settings, screen, starship, missiles)
 		elif event.type == pygame.KEYUP:
-			check_keyup_events(event, starship)
+			check_for_keyup_events(event, starship)
 
-def check_keydown_events(event, game_settings, screen, starship, missiles):
+def check_for_keydown_events(event, game_settings, screen, starship, missiles):
 	"""Respond to key presses."""
 	if event.key == pygame.K_RIGHT:
 		starship.move_right = True
@@ -33,7 +33,7 @@ def launch_missile(game_settings, screen, starship, missiles):
 	new_missile = Missile(screen, game_settings, starship)
 	missiles.add(new_missile)
 
-def check_keyup_events(event, starship):
+def check_for_keyup_events(event, starship):
 	"""Respond to key releases."""
 	if event.key == pygame.K_RIGHT:
 		starship.move_right = False
@@ -44,7 +44,7 @@ def check_keyup_events(event, starship):
 	elif event.key == pygame.K_DOWN:
 		starship.move_down = False
 
-def update_missiles(missiles):
+def update_missiles_position_and_count(missiles):
 	"""Update the position of missiles and get rid of old missiles."""
 
 	# Update missiles positions.
@@ -52,7 +52,7 @@ def update_missiles(missiles):
 	When an update is called on the group, it calls the update
 	each element of the group. In this case, bullet.update()
 	'''
-	missiles.update()
+	missiles.update_position()
 
 	# Get rid of missiles that have disappeared.
 	for missile in missiles.copy():
