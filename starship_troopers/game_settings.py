@@ -17,6 +17,11 @@ class Settings():
 		
 		# Missile properties
 		self.missile_radius = 2
-		self.missile_width = 0
+		self.missile_width = self.missile_radius * 2.0
 		self.missile_colour = (0, 0, 0)
 		self.missile_speed_factor = 2.5
+
+		# Alien properties
+		self.alien_height = 20
+		self.alien_width = 20
+		self.alien_colour = (0, 0, 0)
