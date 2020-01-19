@@ -25,3 +25,8 @@ class Settings():
 		self.alien_height = 20
 		self.alien_width = 60
 		self.alien_colour = (0, 0, 0)
+
+		# Fleet settings
+		self.alien_horizontal_speed_factor = 1
+		self.alien_fleet_drop_speed = 10
+		self.alien_fleet_direction = 1 # 1 is right and -1 is left

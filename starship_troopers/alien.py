@@ -11,11 +11,12 @@ class Alien(Sprite):
 		super().__init__()
 		self.screen = screen
 		self.screen_rect = screen.get_rect()
+		self.game_settings = game_settings
 
 		# Create the alien
 		self.rect = pygame.Rect(0,0,
-			game_settings.alien_width, game_settings.alien_height)
-		self.colour = game_settings.alien_colour
+			self.game_settings.alien_width, self.game_settings.alien_height)
+		self.colour = self.game_settings.alien_colour
 
 		# Positioning the alien near the top left of the screen
 		self.rect.x = self.rect.width
@@ -24,9 +25,20 @@ class Alien(Sprite):
 		# Cast alien positions from int to float
 		self.x = float(self.rect.x)
 		self.y = float(self.rect.y)
-	
-		# Other properties
-		self.colour = game_settings.alien_colour
+
+	def check_edges(self):
+		"""Return True if alien is at edge of screen."""
+		screen_rect = self.screen.get_rect()
+		if self.rect.x >= screen_rect.right:
+			return True
+		elif self.rect.x <= 0:
+			return True
+
+	def update(self):
+		"""Move the alien right."""		
+		self.x += (self.game_settings.alien_horizontal_speed_factor *
+					self.game_settings.alien_fleet_direction) 
+		self.rect.x = self.x		
 
 	def draw_alien(self):
 		"""Draw the alien at its current location."""
