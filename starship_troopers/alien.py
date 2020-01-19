@@ -13,8 +13,8 @@ class Alien(Sprite):
 		self.screen_rect = screen.get_rect()
 
 		# Create the alien
-		self.rect = pygame.Rect(0,0
-			game_settings.alien_height, game_settings.alien_width)
+		self.rect = pygame.Rect(0,0,
+			game_settings.alien_width, game_settings.alien_height)
 		self.colour = game_settings.alien_colour
 
 		# Positioning the alien near the top left of the screen
@@ -30,4 +30,4 @@ class Alien(Sprite):
 
 	def draw_alien(self):
 		"""Draw the alien at its current location."""
-		pygame.draw.eclipse(self.screen, self.colour, self.rect)
+		pygame.draw.ellipse(self.screen, self.colour, self.rect)

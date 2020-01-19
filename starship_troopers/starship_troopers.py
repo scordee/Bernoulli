@@ -23,10 +23,16 @@ def start_game():
 	# Create a group of missiles
 	missiles = Group()
 
+	# Create a group of aliens
+	aliens = Group()
+
+	# Create a fleet of aliens
+	gf.create_alien_fleet(game_settings, screen, starship, aliens)
+
 	while True:
 		gf.check_for_events(game_settings, screen, starship, missiles)
 		starship.update_position(game_settings)
 		gf.update_missiles_position_and_count(missiles)
-		gf.update_screen(game_settings, screen, starship, missiles)
+		gf.update_screen(game_settings, screen, starship, missiles, aliens)
 	
 start_game()

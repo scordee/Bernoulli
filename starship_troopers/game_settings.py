@@ -5,7 +5,7 @@ class Settings():
 		"""Initialise all the attributes of the settings class."""
 
 		# Game screen attributes
-		self.screen_width = 600
+		self.screen_width = 1200
 		self.screen_height = 600
 		self.screen_bg_colour = (225, 176, 110)
 		
@@ -23,5 +23,5 @@ class Settings():
 
 		# Alien properties
 		self.alien_height = 20
-		self.alien_width = 20
+		self.alien_width = 60
 		self.alien_colour = (0, 0, 0)
